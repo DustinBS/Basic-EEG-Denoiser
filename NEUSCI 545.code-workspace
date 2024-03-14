@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.analysis.typeCheckingMode": "basic",
+		"editor.formatOnSaveMode": "file",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#024834"
+		}
+	}
+}
