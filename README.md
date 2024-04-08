@@ -3,21 +3,43 @@ Purpose: Clean up EEG data from MOABB open dataset (Aristimunha et. al, 2023) us
 
 ## Example Visualizations
 These are some examples of the visualizations created in this project
-![](Visualizations/RawVoltageReadings.png)\
+
+<div align="left">
+<img src="Visualizations/RawVoltageReadings.png" width="40%">
+</div>
 Fig. 1. Raw voltage data of 16 channels for 1 trial of the dataset. This depicts the EEG activity of a subject during an oddball paradigm experiment over 311s at 512Hz.
+<br><br>
 
-![](Visualizations/PowerSpectralAnalysis.png)\
+<div align="left">
+<img src="Visualizations/PowerSpectralAnalysis.png" width="60%">
+</div>
 Fig. 2. Power spectral analysis of 1 trial. The power supply noise (50Hz) and some of its harmonics (150Hz, 250Hz) are visible here. The DC bias is less obvious from this plot, but it is the low-frequency components and causes the high voltage shift of the data seen in Fig. 1 (clean EEG data generally does not go into mV levels!).
+<br><br>
 
-![](Visualizations/Filtered.png)
-![](Visualizations/Filtered2.png)\
-Fig. 3. Power spectral analysis after bandstop filtering of power supply noise and bandpass filtering for 1-20Hz for DC bias noise.
+<div align="left">
+<img src="Visualizations/Filtered.png" width="60%">
+</div>
+Fig. 3. Power spectral analysis after bandstop filtering of power supply noise
+<br><br>
 
-<img src="Visualizations/Filtered2EEG.png" width="500"> <img src="Visualizations/Filtered3.png" width="500">\
-Fig. 4. Comparison of a sample channel* before eyeblink removal and after (using ICA). Note the difference in y-axis scales; eye blinks are powerful signals to the EEG compared to brain activity.
+<div align="left">
+<img src="Visualizations/Filtered2.png" width="60%">
+</div>
+Fig. 4. Power spectral analysis after bandstop filtering of power supply noise and bandpass filtering for 1-20Hz for DC bias noise.
+<br><br>
 
-![](Visualizations/ComparisonAfterFiltered3.png)\
-Fig. 5. The neural signature of a sample channel averaged over target epochs (vs. non-target = no P300 ERP). In other words, I averaged out all the epochs where there _should_ be a P300 ERP in a given trial standardized by channel. This is to compare the effect of removing eyeblink artifacts and denoising on signal-to-noise ratio.
+<div align="left">
+  <img src="Visualizations/Filtered2EEG.png" width="33%"> 
+  <img src="Visualizations/Filtered3.png" width="33%">
+</div>
+Fig. 5. Comparison of a sample channel* before eyeblink removal and after (using ICA). Note the difference in y-axis scales; eye blinks are powerful signals to the EEG compared to brain activity.
+<br><br>
+
+<div align="left">
+<img src="Visualizations/ComparisonAfterFiltered3.png" width="50%">
+</div>
+Fig. 6. The neural signature of a sample channel averaged over target epochs (vs. non-target = no P300 ERP). In other words, I averaged out all the epochs where there _should_ be a P300 ERP in a given trial standardized by channel. This is to compare the effect of removing eyeblink artifacts and denoising on signal-to-noise ratio.
+<br><br>
 
 ## Code Overview
 1. Grab Brain Invaders P300 paradigm (BI2013a) dataset from MOABB and explore its structure
