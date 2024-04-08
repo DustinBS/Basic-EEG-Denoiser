@@ -1,7 +1,25 @@
 # About
 Purpose: Clean up EEG data from MOABB open dataset (Aristimunha et. al, 2023) using a mix of in-built functions from the MNE library (Larson et. al, 2024) and an in-house implementation of methods (e.g. PCA) from basic Python functions (eigenvalues, eigenvectors, covariance matrix). Then, compare it with the in-built ICA from the MNE library.
 
-Code overview:
+## Example Visualizations
+These are some examples of the visualizations created in this project
+![](Visualizations/RawVoltageReadings.png)\
+Fig. 1. Raw voltage data of 16 channels for 1 trial of the dataset. This depicts the EEG activity of a subject during an oddball paradigm experiment over 311s at 512Hz.
+
+![](Visualizations/PowerSpectralAnalysis.png)\
+Fig. 2. Power spectral analysis of 1 trial. The power supply noise (50Hz) and some of its harmonics (150Hz, 250Hz) are visible here. The DC bias is less obvious from this plot, but it is the low-frequency components and causes the high voltage shift of the data seen in Fig. 1 (clean EEG data generally does not go into mV levels!).
+
+![](Visualizations/Filtered.png)
+![](Visualizations/Filtered2.png)\
+Fig. 3. Power spectral analysis after bandstop filtering of power supply noise and bandpass filtering for 1-20Hz for DC bias noise.
+
+<img src="Visualizations/Filtered2EEG.png" width="500"> <img src="Visualizations/Filtered3.png" width="500">\
+Fig. 4. Comparison of a sample channel* before eyeblink removal and after (using ICA). Note the difference in y-axis scales; eye blinks are powerful signals to the EEG compared to brain activity.
+
+![](Visualizations/ComparisonAfterFiltered3.png)\
+Fig. 5. The neural signature of a sample channel averaged over target epochs (vs. non-target = no P300 ERP). In other words, I averaged out all the epochs where there _should_ be a P300 ERP in a given trial standardized by channel. This is to compare the effect of removing eyeblink artifacts and denoising on signal-to-noise ratio.
+
+## Code Overview
 1. Grab Brain Invaders P300 paradigm (BI2013a) dataset from MOABB and explore its structure
 2. Filter using MNE bandpass or bandstop methods.
 3. Use PCA to filter eyeblinks
